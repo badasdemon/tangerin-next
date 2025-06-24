@@ -18,7 +18,7 @@ export default function CantikPage() {
           {/* App Icon */}
           <div className="w-24 h-24 md:w-32 md:h-32 bg-white/80 rounded-3xl flex items-center justify-center mb-8 mx-auto shadow-lg border-4 border-white/60">
             <Image
-              src="/CantikIcon.webp"
+              src="/cantikicon.webp"
               alt="Cantik App Icon"
               width={128}
               height={128}
