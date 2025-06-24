@@ -21,10 +21,12 @@ export default function BloomiePage() {
           </button>
           <div className="max-w-full max-h-full flex items-center justify-center">
             {modalImg && (
-              <img
+              <Image
                 src={modalImg}
                 alt="Full screenshot"
-                className="max-h-[90vh] max-w-[90vw] rounded-xl shadow-2xl border-4 border-white"
+                width={800}
+                height={600}
+                className="max-h-[90vh] max-w-[90vw] rounded-xl shadow-2xl border-4 border-white object-contain"
               />
             )}
           </div>
@@ -81,7 +83,7 @@ export default function BloomiePage() {
       <section className="px-4 py-16 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-            Why You'll Love Bloomie
+            Why You&apos;ll Love Bloomie
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-pink-50 to-purple-50">
@@ -108,7 +110,7 @@ export default function BloomiePage() {
                 Private & gentle
               </h3>
               <p className="text-gray-600">
-                Your family's privacy is our priority with gentle, secure design
+                Your family&apos;s privacy is our priority with gentle, secure design
               </p>
             </div>
             <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-yellow-50 to-orange-50">
@@ -159,7 +161,7 @@ export default function BloomiePage() {
       <section className="px-4 py-16 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <blockquote className="text-xl md:text-2xl text-gray-700 italic leading-relaxed">
-            "Every time I open Bloomie, I remember why I started journaling — it feels soft, human, and real."
+            &quot;Every time I open Bloomie, I remember why I started journaling — it feels soft, human, and real.&quot;
           </blockquote>
         </div>
       </section>
@@ -168,7 +170,7 @@ export default function BloomiePage() {
       <section className="px-4 py-16 bg-gradient-to-br from-pink-50 to-purple-50">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Start capturing your baby's growth today.
+            Start capturing your baby&apos;s growth today.
           </h2>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
             <a
