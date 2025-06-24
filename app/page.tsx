@@ -37,10 +37,6 @@ const appCards = [
 ];
 
 export default function Home() {
-  const scrollToApps = () => {
-    document.getElementById('apps')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   // Carousel state for mobile
   const carouselRef = useRef<HTMLDivElement>(null);
   const [activeIdx, setActiveIdx] = useState(0);
@@ -102,7 +98,7 @@ export default function Home() {
             ref={carouselRef}
             className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8 overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:mx-0 sm:px-0"
           >
-            {appCards.map((card, i) => (
+            {appCards.map((card) => (
               <div
                 key={card.title}
                 className={`min-w-[90vw] max-w-xs sm:min-w-0 sm:max-w-none flex-shrink-0 snap-center bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-all duration-200 border border-transparent hover:shadow-xl hover:scale-[1.03] hover:border-${card.border} mx-auto sm:mx-0`}
@@ -166,7 +162,7 @@ export default function Home() {
                 <span className="text-2xl">🎨</span>
               </div>
               <h3 className="font-semibold text-gray-900 text-base md:text-lg mb-1">Beautifully Personal</h3>
-              <p className="text-xs md:text-sm text-gray-500">From the interface to experience, it's all about you.</p>
+              <p className="text-xs md:text-sm text-gray-500">From the interface to experience, it&apos;s all about you.</p>
             </div>
             {/* Card 4 */}
             <div className="flex flex-col items-center bg-white rounded-2xl p-6 shadow-sm">
@@ -193,7 +189,7 @@ export default function Home() {
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-7 h-7">
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.79V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7.79M21 12.79l-9-5.29-9 5.29M21 12.79V19a2 2 0 0 1-2 2h-7.79" />
             </svg>
-            Let's Talk
+            Let&apos;s Talk
           </a>
         </div>
       </section>

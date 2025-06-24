@@ -63,7 +63,7 @@ export default function CantikPage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-16">
-            Why You'll Love Cantik
+            Why You&apos;ll Love Cantik
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Feature 1 */}
@@ -155,7 +155,7 @@ export default function CantikPage() {
           <div className="bg-gradient-to-br from-pink-100 to-purple-100 rounded-3xl p-12 md:p-16">
             <div className="text-6xl mb-6">💕</div>
             <blockquote className="text-xl md:text-2xl text-gray-700 font-medium leading-relaxed mb-6">
-              "Cantik helped me see how far I've come — not just in how I look, but how I feel."
+              &quot;Cantik helped me see how far I&apos;ve come — not just in how I look, but how I feel.&quot;
             </blockquote>
             <p className="text-gray-600 font-medium">— A happy Cantik user</p>
           </div>
