@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface AppData {
   emoji: string;
@@ -86,8 +87,15 @@ export default function LinksPage() {
         <div className="max-w-md w-full space-y-6">
           {/* Profile Section */}
           <div className="text-center mb-8">
-            <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-pink-200 to-purple-200 flex items-center justify-center text-2xl">
-              🍊
+            <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-pink-200 to-purple-200 flex items-center justify-center text-2xl overflow-hidden">
+              <Image
+                src="/tangerislogo.jpg"
+                alt="Tangerin Labs Logo"
+                width={80}
+                height={80}
+                className="object-cover w-full h-full"
+                priority
+              />
             </div>
             <h1 className="text-2xl font-bold text-gray-800 mb-2">Tangerin Labs</h1>
             <p className="text-gray-600">Building apps that make life better</p>
