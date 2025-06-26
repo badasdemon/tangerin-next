@@ -17,8 +17,8 @@ const apps: AppData[] = [
   {
     emoji: '🌸',
     name: 'Bloomie',
-    subtitle: 'Private baby journal app',
-    android: 'https://play.google.com/store/apps/details?id=bloomie.app',
+    subtitle: 'Baby journal app',
+    android: 'https://play.google.com/store/apps/details?id=com.bloomie.app',
     ios: 'https://apps.apple.com/app/id1234567890',
     desktop: '/apps/bloomie'
   },
@@ -26,7 +26,7 @@ const apps: AppData[] = [
     emoji: '💖',
     name: 'Cantik',
     subtitle: 'Beauty & glow-up companion',
-    android: 'https://play.google.com/store/apps/details?id=cantik.app',
+    android: 'https://play.google.com/store/apps/details?id=com.cantik.app',
     ios: 'https://apps.apple.com/app/id1234567891',
     desktop: '/apps/cantik'
   },
@@ -34,7 +34,7 @@ const apps: AppData[] = [
     emoji: '🌿',
     name: 'Vibrame',
     subtitle: 'Self-love tool with body connection',
-    android: 'https://play.google.com/store/apps/details?id=vibrame.app',
+    android: 'https://play.google.com/store/apps/details?id=com.vibrame.app',
     ios: 'https://apps.apple.com/app/id1234567892',
     desktop: '/apps/vibrame'
   }
