@@ -21,7 +21,7 @@ export default function DeleteAccountPage() {
             Delete Your Bloomie Account
           </h1>
           <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-            We're sorry to see you go. Please note that deleting your account will permanently remove all your data, including photos, memories, and settings. This action cannot be undone.
+            We&apos;re sorry to see you go. Please note that deleting your account will permanently remove all your data, including photos, memories, and settings. This action cannot be undone.
           </p>
           
           {/* Warning Card */}
