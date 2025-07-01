@@ -40,8 +40,15 @@ export default function DeleteAccountPage() {
             <button
               className="px-8 py-4 bg-red-600 text-white font-semibold rounded-2xl shadow-lg hover:bg-red-700 transition-all duration-200 text-base w-full max-w-xs"
               onClick={() => {
-                // TODO: Implement account deletion logic
-                console.log('Delete account clicked');
+                const subject = encodeURIComponent('Delete My Bloomie Account');
+                const body = encodeURIComponent(`Hi Tangerin Labs team,
+
+I would like to permanently delete my Bloomie account.
+
+My account email: [please type your email here]
+
+Thank you.`);
+                window.location.href = `mailto:tangerinlabs@gmail.com?subject=${subject}&body=${body}`;
               }}
             >
               Delete My Account
@@ -52,6 +59,13 @@ export default function DeleteAccountPage() {
             >
               Cancel & Go Back
             </Link>
+          </div>
+
+          {/* Footer Text */}
+          <div className="mt-6 text-center">
+            <p className="text-sm text-gray-500">
+              We will respond to account deletion requests within 24–48 hours.
+            </p>
           </div>
 
           {/* Additional Info */}
