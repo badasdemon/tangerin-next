@@ -1,0 +1,87 @@
+"use client";
+import Link from 'next/link';
+import Image from 'next/image';
+
+export default function DeleteAccountPage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
+      {/* Hero Section */}
+      <section className="px-4 py-16 text-center">
+        <div className="max-w-2xl mx-auto">
+          <div className="mb-8">
+            <Image
+              src="/cantikicon.webp"
+              alt="Cantik App Icon"
+              width={80}
+              height={80}
+              className="mx-auto rounded-2xl shadow-lg"
+            />
+          </div>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Delete Your Cantik Account
+          </h1>
+          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            We&apos;re sorry to see you go. Please note that deleting your account will permanently remove all your data, including photos, beauty ratings, and settings. This action cannot be undone.
+          </p>
+          
+          {/* Warning Card */}
+          <div className="bg-red-50 border border-red-200 rounded-2xl p-6 mb-8">
+            <div className="flex items-center justify-center mb-3">
+              <div className="text-2xl mr-2">⚠️</div>
+              <h3 className="text-lg font-semibold text-red-800">Important Warning</h3>
+            </div>
+            <p className="text-red-700 text-sm">
+              All your photos, beauty ratings, and account data will be permanently deleted and cannot be recovered.
+            </p>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <button
+              className="px-8 py-4 bg-red-600 text-white font-semibold rounded-2xl shadow-lg hover:bg-red-700 transition-all duration-200 text-base w-full max-w-xs"
+              onClick={() => {
+                const subject = encodeURIComponent('Delete My Cantik Account');
+                const body = encodeURIComponent(`Hi Tangerin Labs team,
+
+I would like to permanently delete my Cantik account.
+
+My account email: [please type your email here]
+
+Thank you.`);
+                window.location.href = `mailto:tangerinlabs@gmail.com?subject=${subject}&body=${body}`;
+              }}
+            >
+              Delete My Account
+            </button>
+            <Link
+              href="/apps/cantik"
+              className="px-8 py-4 bg-gray-200 text-gray-800 font-semibold rounded-2xl shadow-lg hover:bg-gray-300 transition-all duration-200 text-base w-full max-w-xs text-center"
+            >
+              Cancel & Go Back
+            </Link>
+          </div>
+
+          {/* Footer Text */}
+          <div className="mt-6 text-center">
+            <p className="text-sm text-gray-500">
+              We will respond to account deletion requests within 24–48 hours.
+            </p>
+          </div>
+
+          {/* Additional Info */}
+          <div className="mt-12 text-center">
+            <p className="text-sm text-gray-500 mb-4">
+              Need help? Contact our support team before deleting your account.
+            </p>
+            <Link
+              href="/apps/cantik"
+              className="text-purple-600 hover:text-purple-800 font-medium transition-colors duration-200"
+            >
+              ← Back to Cantik Homepage
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+} 
