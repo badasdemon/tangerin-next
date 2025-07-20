@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
 
 export default function ResetPasswordPage() {
   const router = useRouter();
@@ -46,8 +47,12 @@ export default function ResetPasswordPage() {
       setTimeout(() => {
         router.push("/apps/vibrame");
       }, 1500);
-    } catch (err: any) {
-      setError(err.message || "Unknown error");
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("Unknown error");
+      }
     } finally {
       setLoading(false);
     }
@@ -57,7 +62,7 @@ export default function ResetPasswordPage() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-blue-100">
       <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-2xl border border-black/10">
         <div className="flex flex-col items-center mb-6">
-          <img src="/vibrameicon.webp" alt="Vibrame Logo" className="w-16 h-16 mb-2" />
+          <Image src="/vibrameicon.webp" alt="Vibrame Logo" width={64} height={64} className="mb-2" />
           <h1 className="text-3xl font-extrabold text-black mb-1 tracking-tight text-center">Reset Your Password</h1>
           <p className="text-black text-sm text-center">Enter a new password for your Vibrame account.</p>
         </div>

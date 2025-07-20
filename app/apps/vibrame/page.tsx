@@ -21,7 +21,7 @@ export default function VibramePage() {
     };
     el.addEventListener("scroll", onScroll, { passive: true });
     return () => el.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [screenshots.length]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50">
