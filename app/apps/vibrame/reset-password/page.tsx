@@ -1,6 +1,6 @@
 "use client";
-import { Suspense, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState, Suspense } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function ResetPasswordPageWrapper() {
@@ -13,14 +13,19 @@ export default function ResetPasswordPageWrapper() {
 
 function ResetPasswordPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const accessToken = searchParams.get("access_token");
-
+  const [accessToken, setAccessToken] = useState<string | null>(null);
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    const params = new URLSearchParams(hash.slice(1));
+    const token = params.get("access_token");
+    setAccessToken(token);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,21 +41,20 @@ function ResetPasswordPage() {
     }
     setLoading(true);
     try {
-      const res = await fetch(
-        "https://unfctetxpjxmpldjjgse.supabase.co/auth/v1/user",
-        {
-          method: "PATCH",
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ password }),
-        }
-      );
+      const res = await fetch("https://unfctetxpjxmpldjjgse.supabase.co/auth/v1/user", {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ password }),
+      });
+
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         throw new Error(data?.msg || data?.error_description || "Failed to reset password.");
       }
+
       setSuccess(true);
       setTimeout(() => {
         router.push("/apps/vibrame");
@@ -132,4 +136,4 @@ function ResetPasswordPage() {
       </div>
     </div>
   );
-} 
+}
