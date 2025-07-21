@@ -21,16 +21,25 @@ function ResetPasswordPage() {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
+    // Cek apakah Supabase inject token dari URL (hash)
     const hash = window.location.hash;
     const params = new URLSearchParams(hash.slice(1));
     const token = params.get("access_token");
-    setAccessToken(token);
+    if (token) {
+      localStorage.setItem("vibrame_reset_token", token);
+      setAccessToken(token);
+    } else {
+      // fallback dari localstorage biar gak ilang pas reload
+      const saved = localStorage.getItem("vibrame_reset_token");
+      setAccessToken(saved);
+    }
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setSuccess(false);
+
     if (!accessToken) {
       setError("Missing access token.");
       return;
@@ -39,6 +48,7 @@ function ResetPasswordPage() {
       setError("Password cannot be empty.");
       return;
     }
+
     setLoading(true);
     try {
       const res = await fetch("https://unfctetxpjxmpldjjgse.supabase.co/auth/v1/user", {
@@ -56,6 +66,7 @@ function ResetPasswordPage() {
       }
 
       setSuccess(true);
+      localStorage.removeItem("vibrame_reset_token");
       setTimeout(() => {
         router.push("/apps/vibrame");
       }, 1500);
