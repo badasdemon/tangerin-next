@@ -33,6 +33,15 @@ const appCards = [
     btn: "Learn More",
     border: "pink-400",
     btnColor: "bg-pink-400 hover:bg-pink-500"
+  },
+  {
+    icon: "/idolchaticon.png",
+    title: "Idolchat",
+    desc: "Chat with your favorite AI characters",
+    href: "/apps/idolchat",
+    btn: "Learn More",
+    border: "purple-400",
+    btnColor: "bg-purple-400 hover:bg-purple-500"
   }
 ];
 
